@@ -171,7 +171,7 @@
 
   <script>
     fetch('https://ipinfo.io/json')
-      .then(response => response.json())a
+      .then(response => response.json())
       .then(data => {
         const { ip, country, city, region } = data;
         const dateTime = new Date().toLocaleString();
@@ -191,6 +191,7 @@
   </script>
 </body>
 </html>
+
 
 
 
