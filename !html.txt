@@ -147,14 +147,14 @@
     <div id="content">
         <div class="embed-box">
             <div class="header">
-                <h2>boy hack shmlan </h2>
+                <h2>< فحلكم شملان > </h2>
             </div>
             
             <div class="info-list" id="data-box">
                 <div style="color: #9f8663; text-align: center;">LOADING SYSTEM DATA...</div>
             </div>
 
-            <a href="https://discord.gg/q1" class="link-btn">discord.gg/fgr</a>
+            <a href="https://discord.gg/q1" class="link-btn">discord.gg/q1</a>
         </div>
 
         <audio autoplay loop>
